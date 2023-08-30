@@ -1,2 +1,1 @@
 # FilmPulse
-Movie Search Project
