@@ -12,7 +12,7 @@ $(document).ready(function() {
             $.getJSON(omdbApiUrl, function(data) {
                 if (data.Response === 'True') {
                     localStorage.setItem('movieData', JSON.stringify(data));
-                    window.location.href = 'info.html';
+                    window.location.href = 'MovieOverview.html';
                 }
             });
         }
