@@ -16,7 +16,7 @@ $(document).ready(function() {
         $('#movieRuntime').text('Runtime: ' + data.Runtime);
 
          // Fetch YouTube videos
-         var youtubeApiKey = 'AIzaSyDfMSi8x20AemGBvQqzvJ2Iy0ZWu9wCk0g';
+         var youtubeApiKey = 'youtubeApiKey';
          var youtubeApiUrl = 'https://www.googleapis.com/youtube/v3/search?q=' + encodeURIComponent(data.Title + ' trailer') + '&key=' + youtubeApiKey + '&part=snippet&type=video';
 
          $.getJSON(youtubeApiUrl, function(youtubeData) {
