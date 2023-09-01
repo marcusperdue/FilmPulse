@@ -1,3 +1,31 @@
-.Hello .World {
-HI: HI;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+    background: url(./Images/backgroundimg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.field.has-addons.is-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#random-movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#random-movie .column.is-one-third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
