@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/style.css"/>
+    <link rel="stylesheet" href="./Assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <title>Film Pulse</title>
+    <title>Film Pulse - Movie and TV Show Information</title>
 </head>
 
 <body>
@@ -18,36 +18,36 @@
         <div class="tv-show">
             <button id="tv-btn">TV SHOW</button>
         </div>
-        <div class="Something">
+        <div class="something">
             <button id="something-btn">Something</button>
         </div>
     </header>
 
-    <section class="search section">
-        <div class="containter">
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="field has-addons">
-                        <div class="control is-expanded">
-                            <input id="search" type="text" autofocus="true">
-                        </div>
-                        <div class="control">
-                            <button class="button is-info" id="searchButton">Search</button>
+    <main>
+        <section class="search section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input id="search" type="text" autofocus>
+                            </div>
+                            <div class="control">
+                                <button class="button is-info" id="searchButton">Search</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="movie container">
+            <div id="random-movie">
+                <img src="./Images/Poster Image placeholder.png" alt="Movie Poster">
+                <h1>Title movie</h1>
+            </div>
+        </section>
+    </main>
 </body>
 
-<main>
-    <section class="movie container">
-        <div id="random-movie">
-            <img src="./Images/Poster Image placeholder.png">
-            <h1>Title movie</h1>
-        </div>
-
-    </section>
-</html> 
+</html>

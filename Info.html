@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/style.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <title>Film Pulse</title>
+    <title>Film Pulse - Movie and TV Show Information</title>
 </head>
 
 <body>
@@ -24,17 +24,30 @@
     </header>
 
     <section class="main-page">
-        <div class="movie-poster">
-            <img src="./Images/Poster Image placeholder.png">
-            <h1 id="title">Title:</h1>
-            <h2 id="date">Released:</h2>
-            <h2 id="cast">Cast:</h2>
-            <h2 id="rating">Rating:</h2>
-            <h2 id="genre">Genre:</h2>
-            <h2 id="runtime">Runtime:</h2>
-            <h2 id="platforms">Platforms:</h2>
+        <div class="card-content">
+            <img id="posterImage" src="" alt="MoviePoster">
+            <p class="title" id="movieTitle">Title</p>
+            <p id="subtitle" id="movieYear">Year</p>
+            <p id="moviePlot">Plot</p>
+            <p id="movieDirector">Director</p>
+            <p id="movieActors">Actors<p>
+            <p id="movieGenre">Genre</p>
+            <p id="movieRuntime">Runtime</p>
         </div>
+
     <section class="trailer-page"></section>
+        <div id="trailerContainer"></div>
     </section>
-    
+
+    <style>
+        .image img {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
 </body>
+
+</html>
+
+
+
