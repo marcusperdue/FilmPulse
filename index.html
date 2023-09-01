@@ -1,1 +1,62 @@
-HELLO WORLD
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <title>Film Pulse</title>
+</head>
+
+<body>
+    <header class="navbar has-background-link">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <button class="button is-link has-background-info" id="movie-btn">Movie</button>
+                </div>
+                <div class="column">
+                    <button class="button is-link has-background-info" id="tv-btn">TV SHOW</button>
+                </div>
+                <div class="column">
+                    <button class="button is-link has-background-info" id="something-btn">Something</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="search section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="field has-addons is-centered">
+                        <div class="control is-expanded">
+                            <input id="search" class="input is-rounded" type="text" autofocus="true">
+                        </div>
+                        <div class="control">
+                            <button class="button is-info" id="searchButton" placeholder="Movie or Show title here...">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="movie section">
+            <div class="container">
+                <div id="random-movie" class="columns is-vcentered">
+                    <div class="column">
+                        <h1 class="title">Title movie</h1>
+                    </div>
+                    <div class="column is-one-third">
+                        <img src="./Assets/Images/Poster Image placeholder.png" alt="Movie Poster">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
