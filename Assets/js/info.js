@@ -5,10 +5,6 @@ $(document).ready(function() {
         var data = JSON.parse(storedMovieData);
         var posterApiUrl = 'https://img.omdbapi.com/?i=' + data.imdbID + '&apikey=ca388ffd';
         
-<<<<<<< HEAD
-        
-=======
->>>>>>> origin/JS_feature
         $('#posterImage').attr('src', posterApiUrl);
         $('#movieTitle').text(data.Title);
         $('#moviePlot').text(data.Plot);
