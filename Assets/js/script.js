@@ -2,20 +2,19 @@
 
 //OMDb API - pulls poster and movie data
 $(document).ready(function() {
-    
-    var storedMovieData = localStorage.getItem('movieData');
-    if (storedMovieData) {
-        var data = JSON.parse(storedMovieData);
-        var posterApiUrl = 'https://img.omdbapi.com/?i=' + data.imdbID + '&apikey=ca388ffd';
+    $('#searchButton').click(function() {
+        var searchTerm = $('#search').val();
+        if (searchTerm) {
+            var omdbApiKey = 'ca388ffd';
+            var omdbApiUrl = 'https://www.omdbapi.com/?apikey=' + omdbApiKey + '&t=' + encodeURIComponent(searchTerm);
 
-        $('#posterImage').attr('src', posterApiUrl);
-        $('#movieTitle').text(data.Title);
-        $('#movieYear').text(data.Year);
-        $('#moviePlot').text(data.Plot);
-        $('#movieDirector').text('Director: ' + data.Director);
-        $('#movieActors').text('Actors: ' + data.Actors);
-        $('#movieGenre').text('Genre: ' + data.Genre);
-        $('#movieRuntime').text('Runtime: ' + data.Runtime);
-    }
+            $.getJSON(omdbApiUrl, function(data) {
+                if (data.Response === 'True') {
+                    localStorage.setItem('movieData', JSON.stringify(data));
+                    window.location.href = 'info.html';
+                }
+            });
+        }
+    });
 });
   
