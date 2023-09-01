@@ -1,6 +1,4 @@
-
-
-//OMDb API - pulls poster and movie data
+// Pulls from script.js for info.html
 $(document).ready(function() {
     
     var storedMovieData = localStorage.getItem('movieData');
@@ -18,4 +16,3 @@ $(document).ready(function() {
         $('#movieRuntime').text('Runtime: ' + data.Runtime);
     }
 });
-  
