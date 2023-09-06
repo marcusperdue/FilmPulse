@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./Assets/overview.css">
-    <title>Film Pulse - Movie Overview</title>
-   
+    <link rel="stylesheet" href="./Assets/tvgenre.css">
+    <title>Film Pulse - Genre</title>
+    
+    
 </head>
+
 <body>
     <div class="container-wrapper">
         <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -96,56 +99,31 @@
                 </div>
             </div>
         </nav>
-                         
-                   
-                    
-                     
-               
-        <section class="main-page section">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-8">
-                        <div class="card-content has-text-white">
-                            <p class="title has-text-white mt-5" id="movieTitle">Title</p>
-                            <p id="movieYear">Year</p>
-                        </div>
-                        <div class="columns">
-                            <div class="column is-4">
-                                <div class="image">
-                                    <img id="posterImage" src="" alt="moviePoster">
-                                </div>
-                            </div>
-                            <div class="column is-8">
-                                <div id="trailerContainer"></div>
-                            </div>
-                        </div>
-                        <div class="card-content has-text-white">
-                            <p id="moviePlot">Plot</p>
-                            <p id="movieDirector">Director</p>
-                            <p id="movieActors">Actors</p>
-                            <p id="movieGenre">Genre</p>
-                            <p id="movieRuntime">Runtime</p>
+              
+ 
+
+        <main>
+            <section>
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-12">
+                            <div class="genre-movies" id="movie-posters"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-       
-        
-        
-        
-
-   
-   
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./Assets/js/common.js"></script>
-    <script src="./Assets/js/genre.js"></script>
-    <script src="./Assets/js/info.js"></script>
- 
-
-
+            </section>
+        </main>
+    
 
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./Assets/js/common.js"></script>
+    <script src="./Assets/js/info.js"></script>
+    <script src="./Assets/js/tvgenre.js"></script>
+    
+    
+  
+   
 </body>
+
 </html>
