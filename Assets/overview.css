@@ -9,68 +9,60 @@ html {
   }
 
 body {
-
     font-family: 'IBM Plex Sans', sans-serif;
+    background-color: black;
 }
+
 .container-wrapper {
-background-color: black;
-    min-height: 100vh;  
+    background: linear-gradient(to bottom, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(200, 200, 200, 0.1));
+    color: white;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
 }
+
 .navbar {
-    background-color: transparent;  
+    background-color: transparent;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
 }
 
-
 .navbar-item.has-dropdown:hover .navbar-link {
     background-color: transparent;
     color: inherit;
 }
 
-.navbar-burger {
-    font-size: 24px;  
-    color: white;  
-}
-
-
-
-
-.search-title {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-}
 .custom-search-bar {
     background-color: #ffffff46;
     color: #ffffff;
     box-shadow: 0px 0px 0px #000000, 0px 0px 10px #000000;
     border-color: #515151 !important;
-
 }
 
 .custom-search-button {
-    background-color: #555 !important;  
+    background-color: #555 !important;
     border-color: #515151 !important;
     color: #fff;
     box-shadow: 0px 0px 10px rgb(0, 0, 0), 0px 0px 0px #2d2d2d;
     margin-right: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .custom-search-button:hover,
 .custom-search-bar:hover {
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);  
-}
-.custom-input::placeholder {
-    color: white;  
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.custom-input,
+.custom-search-bar::placeholder,
+.custom-search-bar,
 .custom-search-button {
-    color: white;  
+    color: white;
+}
+
+.footer {
+    height: 10px;
 }
 
 .dropdown {
@@ -111,42 +103,6 @@ background-color: black;
     display: block;
 }
 
-
-.search-section {
-    position: relative;  
-    overflow: hidden;  
-    height: 100vh;
-    
-}
-
-.search-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("/Assets/Images/gravity.jpg");
-    background-size: cover;
-    background-position: center;
-    z-index: 0;  
-}
-
- 
-
-.search-section {
-    position: relative;  
-    z-index: 1; 
-    display: flex;  
-    align-items: center;  
-    justify-content: center; 
-    min-height: 100vh;  
-    padding: 0;  
-}
-.search-section, h1 {
-    color: white;
-    
-}
-
 .poster-container {
     display: flex;
     flex-wrap: wrap;
@@ -154,43 +110,66 @@ background-color: black;
 }
 
 img.movie-poster {
-    max-width: 200px; 
+    max-width: 200px;
     height: auto;
     margin: 20px;
+
 }
-.random-section{
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
-    height: 100vh;
-    overflow-y: scroll;
+
+.random-section {
+    background: linear-gradient(to bottom, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(200, 200, 200, 0.1));
 }
 
 .random-section h2.title {
     margin-bottom: 1rem;
     margin-top: 1rem;
-    
-    color: white; 
+    color: white;
 }
+
 #movie-posters {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 1200px;  
-
+    max-width: 1200px;
 }
 
-.footer {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
-    color: white;
-    padding: 20px;  
-    text-align: center;  
-     
-    height: auto;  
+#posterImage {
+    width: 500px;
+    height: 400px;
+    margin-top: 20px;
+ 
 }
+
+.main-page {
+    height: 50vh;
+    margin-top: 20px;
+}
+
 .movie-poster:hover {
-    transform: scale(1.1);  
-    transition: transform 0.5s ease;  
-    cursor: pointer; 
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
 }
 
+
+
+
+#moviePlot,
+#movieDirector,
+#movieActors,
+#movieGenre,
+#movieRuntime {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #fff; /* White color */
+}
+
+#movieYear{
+    font-size: 1rem;
+}
+
+#movieTitle{
+    font-size: 2rem;
+    margin-bottom: 5px;
+}

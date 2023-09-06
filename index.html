@@ -6,40 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Film Pulse</title>
 </head>
 
 <body>
-    <header class="navbar has-background-link">
-        <div class="navbar-brand">
-           <img src="./Assets/Images/FilmPulse-logo.png" alt="Filmpulse Logo">
-        </div>
-        <div class="navbar-menu navbar-end">
-            <div class="columns">
-                <div class="column">
-                    <button class="button has-background-info" id="movie-btn">Movie</button>
+    <div class="container-wrapper">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="index.html" class="navbar-item has-text-white is-size-4">Film Pulse</a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
                 </div>
-                <div class="column">
-                    <button class="button has-background-info" id="tv-btn">TV SHOW</button>
-                </div>
-                <div class="column">
-                    <button class="button has-background-info" id="something-btn">Something</button>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link has-text-white">
+                                Movie Genres
+                            </a>
+                            <div class="navbar-dropdown has-background-dark">
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Action">Action</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Adventure">Adventure</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Animation">Animation</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Comedy">Comedy</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Crime">Crime</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Drama">Drama</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Family">Family</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Fantasy">Fantasy</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Horror">Horror</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Mystery">Mystery</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Romance">Romance</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Sci-Fi">Sci-Fi</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Thriller">Thriller</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=War">War</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Western">Western</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Documentary">Documentary</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Musical">Musical</a>
+                                <a class="navbar-item has-text-white" href="genreoverview.html?genre=Historical">Historical</a>
+                            </div>
+                        </div>
+                         
+                        <a href="#" class="navbar-item has-text-white no-hover-highlight">
+                            About Us
+                        </a>
+                        <a href="#" class="navbar-item has-text-white no-hover-highlight">
+                            Contact
+                        </a>
+                        <!-- Add more navigation links here -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </nav>
 
-    <section class="search section">
+    <section class="section search-section">
+        <div class="search-background"></div>
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-8">
-                    <div class="field has-addons is-centered">
-                        <div class="control is-expanded">
-                            <input id="search" class="input is-rounded" type="text" autofocus="true">
-                        </div>
-                        <div class="control">
-                            <button class="button is-info" id="searchButton" placeholder="Movie or Show title here...">Search</button>
+                    <h1 class="title has-text-centered has-text-white search-title">Search for Movies and TV Shows</h1>
+                    <div class="centered-addons">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input id="search" class="input is-large custom-input is-rounded custom-search-bar" type="text" placeholder="Enter a title">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info is-large custom-search-button" id="searchButton">Search</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,18 +85,38 @@
         </div>
     </section>
 
-    <main>
-        <section class="movie section">
-            <div class="container">
-                <div id="random-movie" class="columns is-vcentered">
-                    <div class="column">
-                        <h1 class="title">Title movie</h1>
-                    </div>
-                    <div class="column is-one-third" id="movie-posters">
-                    </div>
+
+    <section class="random-section vh-100">
+        <div class="container">
+            <div class="columns is-centered">
+                
+                <div class="column is-12  has-text-centered">
+                    <h2 class="title is-2">Top Movies</h2>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="movie">
+                <div id="movie-posters"></div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2023 Film Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/info.js"></script>
+    <script src="./assets/js/popular.js"></script>
+    <script src="./assets/js/genre.js"></script>
+   
+    
+   
+
 </body>
+
 </html>
