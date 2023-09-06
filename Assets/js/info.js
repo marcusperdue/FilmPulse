@@ -19,7 +19,6 @@ $(document).ready(function() {
         $.getJSON(tmdbSearchUrl, function(tmdbSearchData) {
             if (tmdbSearchData.results && tmdbSearchData.results.length > 0) {
                 var tmdbMovieId = tmdbSearchData.results[0].id;
-
                 var tmdbDetailsUrl = `https://api.themoviedb.org/3/movie/${tmdbMovieId}?api_key=${tmdbApiKey}`;
                 
                 $.getJSON(tmdbDetailsUrl, function(tmdbDetailsData) {
