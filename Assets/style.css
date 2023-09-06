@@ -125,7 +125,7 @@ background-color: black;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/Assets/Images/gravity.jpg");
+    background-image: url("./Images/gravity.jpg");
     background-size: cover;
     background-position: center;
     z-index: 0;  
