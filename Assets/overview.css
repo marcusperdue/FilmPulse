@@ -23,16 +23,59 @@ body {
 }
 
 .navbar {
-    background-color: transparent;
+    background-color: #0a0a0a43 !important;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
 }
 
+ 
 .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent; 
+    color: inherit;
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
+    
+}
+.navbar-item.custom-hover:hover{
     background-color: transparent;
     color: inherit;
+}
+.navbar-dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-burger {
+    font-size: 24px;  
+    color: white;  
+}
+
+.has-background-dark {
+    background-color: #363636e9!important;
+}
+
+.navbar-dropdown.has-background-dark{
+    background-color: transparent;
+    color: inherit;
+}
+.navbar-menu.is-active {
+    max-height: 80vh; /* Set a maximum height for the entire menu */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+}
+ 
+@media screen and (max-width: 1023px){
+.navbar-menu {
+    background-color: #0a0a0a61;
+    box-shadow: 0 8px 16px rgba(10,10,10,.1);
+    padding: 0.5rem 0;
+}
+}
+ 
+.neon-text:hover {
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
+}
+.neon-text{
+    transition: text-shadow 0.3s ease;
 }
 
 .custom-search-bar {
@@ -103,18 +146,7 @@ body {
     display: block;
 }
 
-.poster-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-img.movie-poster {
-    max-width: 200px;
-    height: auto;
-    margin: 20px;
-
-}
 
 .random-section {
     background: linear-gradient(to bottom, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(200, 200, 200, 0.1));
@@ -133,13 +165,37 @@ img.movie-poster {
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
+    
+}
+.poster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 300px;
+    max-height: 500px; /* Set a maximum height for the poster container */
+    
+}
+#posterImage {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+}
+.genre-movies .movie-poster:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-#posterImage {
-    width: 500px;
-    height: 400px;
-    margin-top: 20px;
- 
+#trailerContainer {
+    display: flex;
+    justify-content: center;
+    min-width: 100px;  
+    max-width: 700px;  
+    max-height: 500px;  
+}
+
+#trailerContainer iframe {
+    width: 100%;  
+    height: 350px; 
+    max-width: 100%;  
+    max-height: 100%; 
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
 }
 
 .main-page {
@@ -150,8 +206,8 @@ img.movie-poster {
 .movie-poster:hover {
     transform: scale(1.1);
     transition: transform 0.5s ease;
+   
 }
-
 
 
 
@@ -159,10 +215,37 @@ img.movie-poster {
 #movieDirector,
 #movieActors,
 #movieGenre,
-#movieRuntime {
+#movieRuntime,
+#movieSeasons,
+#movieEpisodes,
+#movieLanguage,
+#movieNetwork,
+#movieStatus {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    color: #fff; /* White color */
+    color: #fff;  
+    transition: color 0.3s, transform 0.5s, background-color 0.5s;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+ 
+#moviePlot:hover,
+#movieDirector:hover,
+#movieActors:hover,
+#movieGenre:hover,
+#movieRuntime:hover,
+#movieSeasons:hover,
+#movieEpisodes:hover,
+#movieLanguage:hover,
+#movieNetwork:hover,
+#movieStatus:hover {
+    color: #ffffff; 
+    background-color: rgba(0, 0, 0, 0.7);  
+    transform: scale(1.1); 
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
 }
 
 #movieYear{

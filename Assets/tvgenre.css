@@ -25,16 +25,59 @@ body {
 }
 
 .navbar {
-    background-color: transparent;
+    background-color: #0a0a0a43 !important;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
 }
 
+ 
 .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent; 
+    color: inherit;
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
+    
+}
+.navbar-item.custom-hover:hover{
     background-color: transparent;
     color: inherit;
+}
+.navbar-dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-burger {
+    font-size: 24px;  
+    color: white;  
+}
+
+.has-background-dark {
+    background-color: #363636e9!important;
+}
+
+.navbar-dropdown.has-background-dark{
+    background-color: transparent;
+    color: inherit;
+}
+.navbar-menu.is-active {
+    max-height: 80vh; /* Set a maximum height for the entire menu */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+}
+ 
+@media screen and (max-width: 1023px){
+.navbar-menu {
+    background-color: #0a0a0a61;
+    box-shadow: 0 8px 16px rgba(10,10,10,.1);
+    padding: 0.5rem 0;
+}
+}
+ 
+.neon-text:hover {
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
+}
+.neon-text{
+    transition: text-shadow 0.3s ease;
 }
 
 .custom-search-bar {
@@ -105,6 +148,7 @@ body {
     display: block;
 }
 
+
 .poster-container {
     display: flex;
     flex-wrap: wrap;
@@ -112,9 +156,10 @@ body {
 }
 
 img.movie-poster {
-    max-width: 200px;
+    max-width: 300px;
     height: auto;
     margin: 20px;
+    
 }
 
 .random-section {
@@ -158,6 +203,7 @@ img.movie-poster {
     width: 100%;
     height: auto;
     display: block;
+    
 }
 
 .tv-show-poster {

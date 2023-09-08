@@ -19,17 +19,26 @@ background-color: black;
     flex-direction: column;
 }
 .navbar {
-    background-color: transparent;  
+    background-color: #0a0a0a43 !important;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
 }
 
-
+ 
 .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent; 
+    color: inherit;
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
+    
+}
+.navbar-item.custom-hover:hover{
     background-color: transparent;
     color: inherit;
+}
+.navbar-dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .navbar-burger {
@@ -37,8 +46,33 @@ background-color: black;
     color: white;  
 }
 
+.has-background-dark {
+    background-color: #363636e9!important;
+}
 
+.navbar-dropdown.has-background-dark{
+    background-color: transparent;
+    color: inherit;
+}
+.navbar-menu.is-active {
+    max-height: 80vh; /* Set a maximum height for the entire menu */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+}
+ 
+@media screen and (max-width: 1023px){
+.navbar-menu {
+    background-color: #0a0a0a61;
+    box-shadow: 0 8px 16px rgba(10,10,10,.1);
+    padding: 0.5rem 0;
+}
+}
 
+.neon-text:hover {
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
+}
+.neon-text{
+    transition: text-shadow 0.3s ease;
+}
 
 .search-title {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
@@ -46,7 +80,7 @@ background-color: black;
 .custom-search-bar {
     background-color: #ffffff46;
     color: #ffffff;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000, 0px 0px 0px #000000;
     border-color: #515151 !important;
 
 }
@@ -111,6 +145,7 @@ background-color: black;
     display: block;
 }
 
+ 
 
 .search-section {
     position: relative;  
