@@ -1,5 +1,7 @@
-const moviesPerPage = 20; // Number of movies to load per page
+const moviesPerPage = 20;
 const currentPageMap = {};
+let loading = false;
+let reachedEnd = false; // Flag to track if all movies have been loaded
 
 $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
@@ -7,23 +9,21 @@ $(document).ready(function () {
 
     if (genre) {
         fetchMoviesByGenre(genre);
-        $(window).scroll(debounce(function () {
-            if ($(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
+        $(window).on('scroll', function () {
+            if (!reachedEnd && !loading && $(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
                 fetchMoviesByGenre(genre);
             }
-        }, 300));
+        });
     }
 });
 
-function debounce(func, wait) {
-    let timeout;
-    return function () {
-        clearTimeout(timeout);
-        timeout = setTimeout(func, wait);
-    };
-}
+function fetchMoviesByGenre(genre) {
+    if (loading || reachedEnd) {
+        return;
+    }
 
-function fetchMoviesByGenre(genre, callback) {
+    loading = true;
+
     const apiKey = '57def683b1f588faea8196f4db0da86c';
     const omdbApiKey = 'ca388ffd';
     const baseUrl = 'https://api.themoviedb.org/3';
@@ -45,6 +45,10 @@ function fetchMoviesByGenre(genre, callback) {
             .filter(movie => movie.poster_path !== '/t/p/w300/sVOdtRA4bwZmrVE3qzdJH73jOhL.jpg')
             .sort((a, b) => a.title.localeCompare(b.title));
 
+        if (sortedResults.length === 0) {
+            reachedEnd = true; // No more movies to load
+        }
+
         sortedResults.forEach(function (movie) {
             const posterPath = movie.poster_path;
             const posterUrl = `https://image.tmdb.org/t/p/w300${posterPath}`;
@@ -57,14 +61,7 @@ function fetchMoviesByGenre(genre, callback) {
                         .attr('src', posterUrl)
                         .attr('alt', movieTitle)
                         .click(function () {
-                            // Redirect to movie details page
-                            const omdbApiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${omdbApiKey}`;
-                            $.getJSON(omdbApiUrl, function(data) {
-                                if (data.Response === 'True') {
-                                    localStorage.setItem('movieData', JSON.stringify(data));
-                                    window.location.href = 'movieoverview.html'; // Replace with the actual URL of the movie details page
-                                }
-                            });
+                            redirectToMovieDetails(movieTitle, omdbApiKey);
                         })
                 );
 
@@ -72,11 +69,17 @@ function fetchMoviesByGenre(genre, callback) {
         });
 
         currentPageMap[genre]++;
-
+        loading = false;
         loadingIndicator.hide();
+    });
+}
 
-        if (typeof callback === 'function') {
-            callback();
+function redirectToMovieDetails(movieTitle, omdbApiKey) {
+    const omdbApiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${omdbApiKey}`;
+    $.getJSON(omdbApiUrl, function (data) {
+        if (data.Response === 'True') {
+            localStorage.setItem('movieData', JSON.stringify(data));
+            window.location.href = 'movieoverview.html'; // Replace with the actual URL of the movie details page
         }
     });
 }
