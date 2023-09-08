@@ -34,7 +34,7 @@ background-color: black;
     
 }
 .navbar-item.custom-hover:hover{
-    background-color: transparent;
+    background-color: transparent ;
     color: inherit;
 }
 .navbar-dropdown a:hover {
@@ -229,3 +229,18 @@ img.movie-poster {
     cursor: pointer; 
 }
 
+.about-section{
+
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
+    height: 90vh;
+    overflow-y: scroll;
+
+    
+}
+
+.about-section h1,
+.about-section h2,
+
+ strong{
+    color: #4c5cc2;
+}
