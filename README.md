@@ -44,8 +44,8 @@ git clone https://github.com/marcusperdue/FilmPulse.git
 ## Live Deploy
 [FilmPulse](https://marcusperdue.github.io/FilmPulse/) has been deployed to GitHub Pages and is accessible online. You can experience the live website by visiting the following URL: [https://marcusperdue.github.io/FilmPulse/](https://marcusperdue.github.io/FilmPulse/)
 
-<img src="./assets/Images/mainscreenshot.png" alt="Main Screenshot" width="300" height="370"/>
-<img src="./assets/Images/genrescreenshot1.png" alt="Genre Screenshot" width="320" height="370"/>
+<img src="./Assets/Images/mainscreenshot.png" alt="Main Screenshot" width="300" height="370"/>
+<img src="./Assets/Images/genrescreenshot1.png" alt="Genre Screenshot" width="320" height="370"/>
 
 
 ## API Integration
