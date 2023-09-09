@@ -1,5 +1,6 @@
 const tvShowsPerPage = 20;
 const currentPageMap = {};
+var storedTVShowData = localStorage.getItem('tvShowData');
 let loading = false;
 let reachedEnd = false; // Flag to track if all TV shows have been loaded
 
@@ -7,7 +8,7 @@ $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const genre = urlParams.get('genre');
     const tvShowId = urlParams.get('tvShowId');
-    localStorage.removeItem('movieData');
+   
 
     if (genre) {
         fetchTVShowsByGenre(genre);
@@ -32,7 +33,7 @@ function debounce(func, wait) {
 function redirectToTVShowDetails(tvShowId) {
     // Construct the URL for the TV show details page
     const tvShowDetailsUrl = `tvshowoverview.html?tvShowId=${tvShowId}`;
-
+ 
     // Redirect to the TV show details page
     window.location.href = tvShowDetailsUrl;
 }
@@ -43,6 +44,7 @@ function fetchTVShowDetails(tvShowId) {
 
     // Construct the URL to fetch TV show details by ID
     const detailsUrl = `${baseUrl}/tv/${tvShowId}?api_key=${apiKey}&language=en-US`;
+    
     $('#trailerContainer').html('');
 
     // Make the API request to fetch TV show details
@@ -55,8 +57,9 @@ function fetchTVShowDetails(tvShowId) {
             $('#moviePlot').text(`${data.overview}`);
             $('#movieDirector').text(`Created by: ${data.created_by ? data.created_by.map(creator => creator.name).join(', ') : 'N/A'}`);
             $('#movieActors').text(`Cast: ${data.Actors || 'N/A'}`);
+ 
             $('#movieGenre').text(`Genres: ${data.genres ? data.genres.map(genre => genre.name).join(', ') : 'N/A'}`);
-            $('#movieRuntime').text(`Runtime: ${data.episode_run_time.length > 0 ? data.episode_run_time[0] + ' min' : 'N/A'}`);
+            
             $('#movieSeasons').text(`Seasons: ${data.number_of_seasons}`);
             $('#movieEpisodes').text(`Episodes: ${data.number_of_episodes || 'N/A'}`);
 
@@ -77,18 +80,15 @@ function fetchTVShowTrailer(tvShowId) {
     const apiKey = '57def683b1f588faea8196f4db0da86c';
     const baseUrl = 'https://api.themoviedb.org/3';
 
+ 
+
     // Construct the URL to fetch TV show videos by ID
     const videosUrl = `${baseUrl}/tv/${tvShowId}/videos?api_key=${apiKey}&language=en-US`;
-
-    console.log('Fetching TV show videos from:', videosUrl);
-
-    // Clear the previous trailer content
-    $('#trailerContainer').html('');
+   $('#trailerContainer').html('');
+  
 
     // Make the API request to fetch TV show videos
     $.get(videosUrl, function (data) {
-        console.log('TV show videos response:', data);
-
         if (data.results && data.results.length > 0) {
             // Filter to get only videos of type 'Trailer' that belong to TV shows
             const trailer = data.results.find(function (video) {
@@ -98,8 +98,9 @@ function fetchTVShowTrailer(tvShowId) {
             if (trailer) {
                 const trailerKey = trailer.key;
                 const trailerHtml = `
-                    <iframe  src="https://www.youtube.com/embed/${trailerKey}" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/${trailerKey}" frameborder="0" allowfullscreen></iframe>
                 `;
+
                 $('#trailerContainer').html(trailerHtml);
             } else {
                 // No TV show trailer of type 'Trailer' found
@@ -147,6 +148,7 @@ function fetchTVShowsByGenre(genre, callback) {
             const posterPath = tvShow.poster_path;
             const posterUrl = `https://image.tmdb.org/t/p/w300${posterPath}`;
             const tvShowTitle = tvShow.name;
+            
             const tvShowId = tvShow.id; // Add TV show ID
 
             const posterElement = $('<div>')
@@ -173,13 +175,6 @@ function fetchTVShowsByGenre(genre, callback) {
         }
     });
 }
-function debounce(func, wait) {
-    let timeout;
-    return function () {
-        clearTimeout(timeout);
-        timeout = setTimeout(func, wait);
-    };
-}
 
 function getGenreId(genre) {
     // Define TV show genres and their corresponding IDs here
@@ -192,11 +187,9 @@ function getGenreId(genre) {
         'Drama': 18,
         'Family': 10751,
         'Fantasy': 10765, // Replace with the correct genre ID for Fantasy
-        'Horror': 27,
         'Mystery': 9648,
         'Romance': 10749,
         'Sci-Fi': 10765, // Replace with the correct genre ID for Sci-Fi
-        
         'War': 10768, // Replace with the correct genre ID for War
         'Western': 37,
         'Documentary': 99,

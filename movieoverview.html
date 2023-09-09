@@ -3,24 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="icon" type="image/png" sizes="64x64" href="./Assets/Images/filmpulseicon.png">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-	<link href="./Assets/overview.css" rel="stylesheet">
-	<title>Film Pulse - Movie Overview</title>
+	<link href="./assets/css/overview.css" rel="stylesheet">
+	<title>FilmPulse - Overview</title>
 </head>
 <body>
 	<div class="container-wrapper">
 		<nav aria-label="main navigation" class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-brand">
-					<a class="navbar-item has-text-white is-size-4 neon-text" href="index.html">Film Pulse</a> <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" id="navbarBurger" role="button"><!-- Hamburger icon for the main menu -->
+					<a class="navbar-item has-text-white is-size-4 neon-text" href="index.html">FilmPulse</a> <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" id="navbarBurger" role="button"><!-- Hamburger icon for the main menu -->
 					 <span aria-hidden="true" id="hamburgerIconMain"></span> <span aria-hidden="true" id="hamburgerIconMain"></span> <span aria-hidden="true" id="hamburgerIconMain"></span></a>
 				</div>
 				<div class="navbar-menu" id="navbarMenu">
 					<div class="navbar-end">
 						<div class="field has-addons" style="margin-top: 10px;">
-							<p class="control"><input class="input is-rounded is-small custom-search-bar" id="search" placeholder="Enter a title" type="text"></p>
+							<p class="control"><input class="input is-rounded is-small custom-search-bar" id="search" placeholder="Enter a title" type="text" autocomplete="off"></p>
 							<p class="control"><button class="button is-info is-small custom-search-button" id="searchButton">Search</button></p>
 						</div>
 						<div class="navbar-item has-dropdown is-hoverable">
@@ -51,8 +52,8 @@
 							<div class="column is-4">
 								<div class="image"><img alt="moviePoster" id="posterImage" src=""></div>
 							</div>
-							<div class="column is-8">
-								<div id="trailerContainer"></div>
+							<div class="column is-8 ">
+								<div id="trailerContainer"   ></div>
 							</div>
 						</div>
 						<div class="card-content has-text-white">
@@ -68,11 +69,11 @@
 		</section>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js">
 		</script> 
-		<script src="./Assets/js/common.js">
+		<script src="./assets/js/common.js">
 		</script> 
-		<script src="./Assets/js/genre.js">
+		<script src="./assets/js/genre.js">
 		</script> 
-		<script src="./Assets/js/info.js">
+		<script src="./assets/js/info.js">
 		</script> 
 		<script>
 		      document.addEventListener('DOMContentLoaded', function () {

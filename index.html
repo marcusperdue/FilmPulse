@@ -3,22 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="icon" type="image/png" sizes="64x64" href="./Assets/Images/filmpulseicon.png">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-	<link href="./Assets/style.css" rel="stylesheet">
-	<title>Film Pulse</title>
+	<link href="./assets/css/index.css" rel="stylesheet">
+	<title>FilmPulse - Home</title>
+	<style>
+        .trailers-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .trailer-item {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        margin-right: 16px;  
+        border-radius: 10px;  
+    }
+
+    .trailer-item iframe {
+        width: 300px; 
+        height: 169px;  
+    }
+	
+    </style>
 </head>
 <body>
 	<div class="container-wrapper">
 		<nav aria-label="main navigation" class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-brand">
-					<a class="navbar-item has-text-white is-size-4 neon-text" href="index.html">Film Pulse</a> <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" id="navbarBurger" role="button"><!-- Hamburger icon for the main menu -->
+					<a class="navbar-item has-text-white is-size-4 neon-text" href="index.html">FilmPulse</a> <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" id="navbarBurger" role="button"><!-- Hamburger icon for the main menu -->
 					 <span aria-hidden="true" id="hamburgerIconMain"></span> <span aria-hidden="true" id="hamburgerIconMain"></span> <span aria-hidden="true" id="hamburgerIconMain"></span></a>
 				</div>
 				<div class="navbar-menu" id="navbarMenu">
 					<div class="navbar-end">
+						
 						<div class="navbar-item has-dropdown is-hoverable">
 							<a class="navbar-link has-text-white">Movie Genres</a>
 							<div class="navbar-dropdown has-background-dark">
@@ -28,9 +51,10 @@
 						<div class="navbar-item has-dropdown is-hoverable">
 							<a class="navbar-link has-text-white">TV Show Genres</a>
 							<div class="navbar-dropdown has-background-dark">
-								<a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Action">Action</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Adventure">Adventure</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Animation">Animation</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Comedy">Comedy</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Crime">Crime</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Drama">Drama</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Family">Family</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Fantasy">Fantasy</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Horror">Horror</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Mystery">Mystery</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Romance">Romance</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Sci-Fi">Sci-Fi</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=War">War</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Western">Western</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Documentary">Documentary</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Musical">Musical</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Historical">Historical</a>
+								<a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Action">Action</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Adventure">Adventure</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Animation">Animation</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Comedy">Comedy</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Crime">Crime</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Drama">Drama</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Family">Family</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Fantasy">Fantasy</a>  <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Mystery">Mystery</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Romance">Romance</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Sci-Fi">Sci-Fi</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=War">War</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Western">Western</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Documentary">Documentary</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Musical">Musical</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Historical">Historical</a>
 							</div>
-						</div><a class="navbar-item custom-hover has-text-white neon-text" href="about.html">About Us</a>  
+						</div> 
+						<a class="navbar-item custom-hover has-text-white neon-text" href="about.html">About Us</a>  
 					</div>
 				</div>
 			</div>
@@ -44,7 +68,7 @@
 						<div class="centered-addons">
 							<div class="field has-addons">
 								<div class="control is-expanded">
-									<input class="input is-large custom-input is-rounded custom-search-bar" id="search" placeholder="Enter a title" type="text">
+									<input class="input is-large custom-input is-rounded custom-search-bar" id="search" placeholder="Enter a title" type="text" autocomplete="off">
 								</div>
 								<div class="control">
 									<button class="button is-info is-large custom-search-button" id="searchButton">Search</button>
@@ -54,8 +78,17 @@
 					</div>
 				</div>
 			</div>
+			
 		</section>
-		<section class="random-section vh-100">
+		<section class="latest-trailers">
+			<div class="columns is-centered  has-text-centered has-text-white">
+			<h2 class="title">Latest Trailers</h2> </div>
+			<div class="trailers-container">
+			  <!-- Add trailer elements here -->
+			</div>
+		</section>
+
+		<section class="random-section">
 			<div class="container">
 				<div class="columns is-centered">
 					<div class="column is-12 has-text-centered">
@@ -69,20 +102,26 @@
 		</section>
 		<footer class="footer">
 			<div class="content has-text-centered">
-				<p>&copy; 2023 Film Pulse. All rights reserved.</p>
+				<p>&copy; 2023 FilmPulse. All rights reserved.</p>
 			</div>
 		</footer>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js">
 	</script> 
-	<script src="./Assets/js/info.js">
+	<script src="./assets/js/tvgenre.js">
 	</script> 
-	<script src="./Assets/js/popular.js">
+	<script src="./assets/js/info.js">
 	</script> 
-	<script src="./Assets/js/common.js">
+	<script src="./assets/js/popular.js">
 	</script> 
-	<script src="./Assets/js/tvgenre.js">
+	<script src="./assets/js/common.js">
 	</script> 
+	<script src="./assets/js/banner.js">
+	</script> 
+	<script src="./assets/js/latesttrailer.js">
+	</script> 
+
+
 	<script>
 	    document.addEventListener('DOMContentLoaded', function () {
 	   // Get the burger icon for the main menu
@@ -146,5 +185,6 @@
 	});
 
 	</script>
+ 
 </body>
 </html>

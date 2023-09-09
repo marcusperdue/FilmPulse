@@ -3,38 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="icon" type="image/png" sizes="64x64" href="./Assets/Images/filmpulseicon.png">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-	<link href="./Assets/tvgenre.css" rel="stylesheet">
-	<title>Film Pulse - Genre</title>
+	<link href="./assets/css/tvgenre.css" rel="stylesheet">
+	<title>FilmPulse - TV Genre</title>
 </head>
 <body>
 	<div class="container-wrapper">
 		<nav aria-label="main navigation" class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-brand">
-					<a class="navbar-item has-text-white is-size-4 neon-text" href="index.html">Film Pulse</a> <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" id="navbarBurger" role="button"><!-- Hamburger icon for the main menu -->
+					<a class="navbar-item has-text-white is-size-4 neon-text" href="index.html">FilmPulse</a> <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" id="navbarBurger" role="button"><!-- Hamburger icon for the main menu -->
 					 <span aria-hidden="true" id="hamburgerIconMain"></span> <span aria-hidden="true" id="hamburgerIconMain"></span> <span aria-hidden="true" id="hamburgerIconMain"></span></a>
 				</div>
 				<div class="navbar-menu" id="navbarMenu">
 					<div class="navbar-end">
 						<div class="field has-addons" style="margin-top: 10px;">
-							<p class="control"><input class="input is-rounded is-small custom-search-bar" id="search" placeholder="Enter a title" type="text"></p>
+							<p class="control"><input class="input is-rounded is-small custom-search-bar" id="search" placeholder="Enter a title" type="text" autocomplete="off"></p>
 							<p class="control"><button class="button is-info is-small custom-search-button" id="searchButton">Search</button></p>
 						</div>
 						<div class="navbar-item has-dropdown is-hoverable">
 							<a class="navbar-link has-text-white">Movie Genres</a>
 							<div class="navbar-dropdown has-background-dark">
-								<a class="navbar-item has-text-white" href="genreoverview.html?genre=Action">Action</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Adventure">Adventure</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Animation">Animation</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Comedy">Comedy</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Crime">Crime</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Drama">Drama</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Family">Family</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Fantasy">Fantasy</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Horror">Horror</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Mystery">Mystery</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Romance">Romance</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Sci-Fi">Sci-Fi</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Thriller">Thriller</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=War">War</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Western">Western</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Documentary">Documentary</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Musical">Musical</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Historical">Historical</a>
+								<a class="navbar-item has-text-white" href="genreoverview.html?genre=Action">Action</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Adventure">Adventure</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Animation">Animation</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Comedy">Comedy</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Crime">Crime</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Drama">Drama</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Family">Family</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Fantasy">Fantasy</a><a class="navbar-item has-text-white" href="genreoverview.html?genre=Mystery">Mystery</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Romance">Romance</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Sci-Fi">Sci-Fi</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Thriller">Thriller</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=War">War</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Western">Western</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Documentary">Documentary</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Musical">Musical</a> <a class="navbar-item has-text-white" href="genreoverview.html?genre=Historical">Historical</a>
 							</div>
 						</div>
 						<div class="navbar-item has-dropdown is-hoverable">
 							<a class="navbar-link has-text-white">TV Show Genres</a>
 							<div class="navbar-dropdown has-background-dark">
-								<a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Action">Action</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Adventure">Adventure</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Animation">Animation</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Comedy">Comedy</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Crime">Crime</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Drama">Drama</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Family">Family</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Fantasy">Fantasy</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Horror">Horror</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Mystery">Mystery</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Romance">Romance</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Sci-Fi">Sci-Fi</a><a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=War">War</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Western">Western</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Documentary">Documentary</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Musical">Musical</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Historical">Historical</a>
+								<a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Action">Action</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Adventure">Adventure</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Animation">Animation</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Comedy">Comedy</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Crime">Crime</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Drama">Drama</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Family">Family</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Fantasy">Fantasy</a>  <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Mystery">Mystery</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Romance">Romance</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Sci-Fi">Sci-Fi</a><a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=War">War</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Western">Western</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Documentary">Documentary</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Musical">Musical</a> <a class="navbar-item has-text-white" href="tvgenreoverview.html?genre=Historical">Historical</a>
 							</div>
-						</div><a class="navbar-item custom-hover has-text-white neon-text" href="about.html">About Us</a> <!-- Add more navigation links here -->
+						</div><a class="navbar-item custom-hover has-text-white neon-text" href="about.html">About Us</a>  
 					</div>
 				</div>
 			</div>
@@ -50,13 +51,14 @@
 				</div>
 			</section>
 		</main>
+		 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js">
 		</script> 
-		<script src="./Assets/js/common.js">
+		<script src="./assets/js/common.js">
 		</script> 
-		<script src="./Assets/js/info.js">
+		<script src="./assets/js/info.js">
 		</script> 
-		<script src="./Assets/js/tvgenre.js">
+		<script src="./assets/js/tvgenre.js">
 		</script> 
 		<script>
 		      document.addEventListener('DOMContentLoaded', function () {
