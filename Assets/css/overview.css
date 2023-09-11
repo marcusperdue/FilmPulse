@@ -59,7 +59,7 @@ body {
     color: inherit;
 }
 .navbar-menu.is-active {
-    max-height: 80vh; 
+    max-height: 50vh;  
     overflow-y: auto;  
 }
  
@@ -324,3 +324,4 @@ body {
      
     height: auto;  
 }
+

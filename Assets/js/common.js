@@ -38,8 +38,13 @@ $(document).ready(function () {
                 // Handle OMDB API request failure
                 console.error('Error: Failed to fetch movie/TV show data using OMDB API. Status:', textStatus, 'Error:', errorThrown);
                 // You can display an error message to the user here
+                redirectTo404Page(); // Redirect to the 404 page on failure
             });
         }
+    }
+
+    function redirectTo404Page() {
+        window.location.href = '404.html'; // Replace with the actual path to your 404 page
     }
 
     function fetchTVShowDetails(searchTerm) {
@@ -57,11 +62,13 @@ $(document).ready(function () {
                 // Movie/TV show not found or API request failed for both OMDB and TMDb
                 console.error('Error: Movie/TV show not found or API request failed for both OMDB and TMDb.');
                 // You can display an error message to the user here
+                redirectTo404Page(); // Redirect to the 404 page when no TV shows are found
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             // Handle TMDb API request failure
             console.error('Error: Failed to fetch movie/TV show data using TMDb API. Status:', textStatus, 'Error:', errorThrown);
             // You can display an error message to the user here
+            redirectTo404Page(); // Redirect to the 404 page on failure
         });
     }
 

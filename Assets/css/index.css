@@ -3,6 +3,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    
 }
 html {
     scroll-behavior: smooth;
@@ -17,6 +18,7 @@ background-color: black;
     min-height: 100vh;  
     display: flex;
     flex-direction: column;
+      
 }
 .navbar {
     background-color: #0a0a0a43 !important;
@@ -56,7 +58,7 @@ background-color: black;
     color: inherit;
 }
 .navbar-menu.is-active {
-    max-height: 80vh;  
+    max-height: 50vh;  
     overflow-y: auto;  
 }
  
@@ -215,11 +217,9 @@ img.movie-poster {
     height: auto;
     margin: 20px;
 }
-.random-section{
+.random-section {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), #0c1114);
-    height: 100vh;
-    max-height: 100vh;
-    overflow-y: scroll;
+    overflow: hidden; /* Disable both vertical and horizontal scrolling */
 }
 
 .random-section h2.title {
@@ -227,6 +227,7 @@ img.movie-poster {
     color: white;
     font-size: 2em;
 }
+
 .title{
     margin-top: 1rem;
     color: white; 
@@ -262,11 +263,19 @@ img.movie-poster {
 .about-section{
 
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), #0c1114);
-    height: 90vh;
-    
-
+    height: 120vh;
+    max-height: 120vh;
     
 }
+@media screen and (max-width: 400px){
+    .about-section{
+
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), #0c1114);
+        height: 190vh;
+        max-height: 190vh;
+        
+    }
+    }
 
 .about-section h1,
 .about-section h2,
@@ -283,7 +292,7 @@ img.movie-poster {
     background-color: rgba(255, 255, 255, 0.9);  
     border: 1px solid #ccc;  
     max-height: 150px;  
-    overflow-y: auto;  
+    overflow-y: hidden;  
     z-index: 100; 
     width: 100%; 
 }
@@ -299,10 +308,10 @@ img.movie-poster {
 }
 
 .latest-trailers{
-height: 40vh;
+ 
 background: linear-gradient(to bottom, #0c1114, rgba(0, 0, 0, 0.1));
 padding: 20px 0;  
-overflow-x: scroll;  
+overflow-x: hidden;  
 white-space: nowrap;  
 
 }
@@ -315,4 +324,28 @@ gap: 20px;
 
 #player{
     border-radius: 30px !important;
+}
+
+/* Hide the default scroll bar on all elements */
+body ::-webkit-scrollbar {
+    width: .5em;
+    background: none;
+}
+
+/* Style for Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar-thumb {
+    background-color: #0a0f13; /* Color of the scroll thumb */
+    border-radius: .5rem; /* Rounded corners of the thumb */
+    
+}
+
+/* Style for Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+}
+
+/* Style for the horizontal scrollbar (if needed) */
+::-webkit-scrollbar-track {
+    background: transparent; /* Background of the scrollbar track */
 }

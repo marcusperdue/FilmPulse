@@ -4,12 +4,15 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<link rel="icon" type="image/png" sizes="64x64" href="./Assets/Images/filmpulseicon.png">
+	<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	<link href="./Assets/css/index.css" rel="stylesheet">
 	<title>FilmPulse - Home</title>
 	<style>
+	
         .trailers-container {
         display: flex;
         flex-wrap: nowrap;
@@ -81,8 +84,8 @@
 			
 		</section>
 		<section class="latest-trailers">
-			<div class="columns is-centered  has-text-centered has-text-white">
-			<h2 class="title">Latest Trailers</h2> </div>
+			<h2 class="title is-centered  has-text-centered has-text-white">Latest Trailers</h2>
+			<div class="columns is-centered  has-text-centered has-text-white"> </div>
 			<div class="trailers-container">
 			  <!-- Add trailer elements here -->
 			</div>
@@ -115,8 +118,6 @@
 	<script src="./Assets/js/popular.js">
 	</script> 
 	<script src="./Assets/js/common.js">
-	</script> 
-	<script src="./Assets/js/banner.js">
 	</script> 
 	<script src="./Assets/js/latesttrailer.js">
 	</script> 
