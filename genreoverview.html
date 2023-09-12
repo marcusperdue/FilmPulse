@@ -63,67 +63,58 @@
 		<script src="./Assets/js/genre.js">
 		</script> 
 		<script>
-		      document.addEventListener('DOMContentLoaded', function () {
-		     // Get the burger icon for the main menu
-		     var burgerMain = document.getElementById('navbarBurger');
-		     var menu = document.getElementById('navbarMenu');
-		 
-		     // Get all elements with the class "navbar-item" that have a dropdown
-		     var dropdownItems = document.querySelectorAll('.navbar-item.has-dropdown');
-		 
-		     // Hide all dropdowns initially
-		     dropdownItems.forEach(function (item) {
-		         var dropdown = item.querySelector('.navbar-dropdown');
-		         dropdown.style.display = 'none';
-		     });
-		 
-		     // Function to close the menu
-		     function closeMenu() {
-		         menu.classList.remove('is-active');
-		     }
-		 
-		     // Add a click event listener to the burger icon for the main menu
-		     burgerMain.addEventListener('click', function (event) {
-		         event.stopPropagation(); // Prevent document click event from firing
-		         // Toggle the 'is-active' class on the menu
-		         menu.classList.toggle('is-active');
-		     });
-		 
-		     // Add a global click event listener to hide dropdowns when clicking outside
-		     document.addEventListener('click', function (event) {
-		         // Close the menu if the click is outside of the menu
-		         if (!menu.contains(event.target)) {
-		             closeMenu();
-		         }
-		 
-		         // Close dropdowns when clicking outside
-		         dropdownItems.forEach(function (item) {
-		             var dropdown = item.querySelector('.navbar-dropdown');
-		             if (event.target !== item && event.target !== item.querySelector('.navbar-link')) {
-		                 dropdown.style.display = 'none';
-		             }
-		         });
-		     });
-		 
-		     // Loop through each navbar item with a dropdown
-		     dropdownItems.forEach(function (item) {
-		         // Get the corresponding dropdown
-		         var dropdown = item.querySelector('.navbar-dropdown');
-		 
-		         // Get the unique ID for this dropdown
-		         var dropdownId = item.getAttribute('data-dropdown-id');
-		 
-		         // Add a click event listener to the navbar-link
-		         item.querySelector('.navbar-link').addEventListener('click', function (event) {
-		             // Prevent the default link behavior
-		             event.preventDefault();
-		 
-		             // Toggle the 'is-active' class on the dropdown to show/hide it
-		             dropdown.style.display = (dropdown.style.display === 'none') ? 'block' : 'none';
-		         });
-		     });
-		 });
-		 
+/* This code adds event listeners to a website's navigation menu to enable dropdown menus.
+			It allows the menu to open and close when clicking a burger icon and closes dropdowns when clicking outside the menu.*/
+			document.addEventListener('DOMContentLoaded', function() {
+	// Get the burger icon for the main menu
+	var burgerMain = document.getElementById('navbarBurger');
+	var menu = document.getElementById('navbarMenu');
+	// Get all elements with the class "navbar-item" that have a dropdown
+	var dropdownItems = document.querySelectorAll('.navbar-item.has-dropdown');
+	// Hide all dropdowns initially
+	dropdownItems.forEach(function(item) {
+		var dropdown = item.querySelector('.navbar-dropdown');
+		dropdown.style.display = 'none';
+	});
+	// Function to close the menu
+	function closeMenu() {
+		menu.classList.remove('is-active');
+	}
+	// Add a click event listener to the burger icon for the main menu
+	burgerMain.addEventListener('click', function(event) {
+		event.stopPropagation(); // Prevent document click event from firing
+		// Toggle the 'is-active' class on the menu
+		menu.classList.toggle('is-active');
+	});
+	// Add a global click event listener to hide dropdowns when clicking outside
+	document.addEventListener('click', function(event) {
+		// Close the menu if the click is outside of the menu
+		if (!menu.contains(event.target)) {
+			closeMenu();
+		}
+		// Close dropdowns when clicking outside
+		dropdownItems.forEach(function(item) {
+			var dropdown = item.querySelector('.navbar-dropdown');
+			if (event.target !== item && event.target !== item.querySelector('.navbar-link')) {
+				dropdown.style.display = 'none';
+			}
+		});
+	});
+	// Loop through each navbar item with a dropdown
+	dropdownItems.forEach(function(item) {
+		// Get the corresponding dropdown
+		var dropdown = item.querySelector('.navbar-dropdown');
+		// Get the unique ID for this dropdown
+		var dropdownId = item.getAttribute('data-dropdown-id');
+		// Add a click event listener to the navbar-link
+		item.querySelector('.navbar-link').addEventListener('click', function(event) {
+			// Prevent the default link behavior
+			event.preventDefault();
+			// Toggle the 'is-active' class on the dropdown to show/hide it
+			dropdown.style.display = (dropdown.style.display === 'none') ? 'block' : 'none';
+		});
+	});
+});
 		</script> 
 	</div>
 	<div id="loading-indicator" class="loading-spinner">

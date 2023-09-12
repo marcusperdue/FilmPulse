@@ -1,6 +1,6 @@
 # [FilmPulse](https://marcusperdue.github.io/FilmPulse/) 
 
-## Introduction
+## Description
 
 Welcome to [FilmPulse](https://marcusperdue.github.io/FilmPulse/), your ultimate destination for exploring the world of movies. Whether you're a dedicated cinephile searching for information about your favorite films or just curious about the latest releases, FilmPulse is your go-to platform.
 

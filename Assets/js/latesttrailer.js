@@ -1,6 +1,10 @@
+/* This JavaScript code, triggered on DOMContentLoaded, 
+fetches and displays the latest movie trailers from The Movie Database (TMDb) API, 
+creating embedded YouTube video elements for each popular movie along with its title on the webpage. */
+
 document.addEventListener('DOMContentLoaded', function () {
-    const apiKey = '57def683b1f588faea8196f4db0da86c'; // Your TMDB API key
-    const youtubeApiKey = 'YOUR_YOUTUBE_API_KEY'; // Your YouTube Data API key
+    const apiKey = '57def683b1f588faea8196f4db0da86c'; // TMDB API key
+    const youtubeApiKey = 'YOUR_YOUTUBE_API_KEY'; // YouTube Data API key
   
  // Function to fetch the latest trailers
  function fetchLatestTrailers() {
@@ -17,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     fetchMovieTrailers(movie.id)
                         .then((trailers) => {
                             if (trailers && trailers.length > 0) {
-                                const trailer = trailers[0]; // Assuming you want to display the first trailer
+                                const trailer = trailers[0];  
                                 const trailerElement = document.createElement('div');
                                 trailerElement.innerHTML = `
                                     <iframe

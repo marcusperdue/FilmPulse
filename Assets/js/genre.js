@@ -1,3 +1,9 @@
+/* This JavaScript code creates a webpage that dynamically loads
+ and displays movies of a specified genre from the TMDb API as the
+  user scrolls, with clickable posters that fetch additional movie 
+  details from the OMDB API and redirect the user to a detailed movie
+   overview page upon clicking. */
+   
 const moviesPerPage = 20;
 const currentPageMap = {};
 let loading = false;
@@ -79,7 +85,7 @@ function redirectToMovieDetails(movieTitle, omdbApiKey) {
     $.getJSON(omdbApiUrl, function (data) {
         if (data.Response === 'True') {
             localStorage.setItem('movieData', JSON.stringify(data));
-            window.location.href = 'movieoverview.html'; // Replace with the actual URL of the movie details page
+            window.location.href = 'movieoverview.html';  
         }
     });
 }

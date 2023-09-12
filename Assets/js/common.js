@@ -1,3 +1,7 @@
+/* This JavaScript code handles user input to search for movies 
+and TV shows using OMDB and TMDb APIs, redirecting users to 
+detailed pages or displaying errors as needed.*/
+
 $(document).ready(function () {
     $('#searchButton').click(searchMovies);
     $('#search').keypress(function (event) {
@@ -44,7 +48,7 @@ $(document).ready(function () {
     }
 
     function redirectTo404Page() {
-        window.location.href = '404.html'; // Replace with the actual path to your 404 page
+        window.location.href = '404.html'; 
     }
 
     function fetchTVShowDetails(searchTerm) {

@@ -1,3 +1,8 @@
+/* This JavaScript code, executed when the document is ready,
+ fetches and displays information about popular movies, including titles, 
+ release years, and movie posters, utilizing both The Movie Database (TMDb) 
+ and Open Movie Database (OMDB) APIs, allowing users to click on posters to access detailed movie data. */
+
 $(document).ready(function() {
     var tmdbApiKey = '57def683b1f588faea8196f4db0da86c';
     var omdbApiKey = 'ca388ffd';

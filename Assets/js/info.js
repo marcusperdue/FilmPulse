@@ -1,4 +1,11 @@
+/* This JavaScript code, triggered when the document is ready,
+ retrieves and displays detailed information about a movie, 
+ including its poster, title, plot, director, actors, genre, runtime, 
+ and trailer (if available), by fetching data from local storage and 
+ making API requests to both OMDB and TMDb databases for movie information and trailers. */
+ 
 $(document).ready(function () {
+
     var storedMovieData = localStorage.getItem('movieData');
    
 
@@ -61,7 +68,5 @@ $(document).ready(function () {
         }
         
     } 
-   
-
     
 });

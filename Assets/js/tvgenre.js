@@ -1,3 +1,8 @@
+/* This JavaScript code, triggered on document ready,
+ enables users to browse and access detailed information 
+ about TV shows, including posters, titles, and trailers, 
+ categorized by genre, with support for dynamic loading and clicking on posters to view more details. */
+ 
 const tvShowsPerPage = 20;
 const currentPageMap = {};
 var storedTVShowData = localStorage.getItem('tvShowData');
